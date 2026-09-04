@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>കഷണ്ടി Meter — When Will Your Hairline Retire?</title>
+    <meta name="description"
+        content="A playful, non-medical app that hilariously estimates when your hairline might retire. For entertainment only!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script type="text/javascript"
+        src="http://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AQrgNmSDFXSimeabW5jSoVMoQDLqeWb5tdH6HrwOXRfJMDacAUjLuHPubn0GcJec"
+        charset="UTF-8"></script>
+</head>
+
+<body>
+    <!-- Animated background particles -->
+    <div class="bg-particles" id="bgParticles"></div>
+
+    <!-- App shell -->
+    <div class="app" id="app">
+
+        <!-- ======= LANDING PAGE ======= -->
+        <section class="page active" id="pageLanding">
+            <header class="site-header">
+                <div class="logo">
+                    <span class="logo-icon">🦱</span>
+                    <span class="logo-text">കഷണ്ടി <span class="logo-accent">Meter</span></span>
+                </div>
+                <div class="disclaimer-chip">🎭 Entertainment Only</div>
+            </header>
+
+            <main class="landing-main">
+                <div class="hero-badge">✨ Powered by Fake Science™</div>
+                <h1 class="hero-title">When will your hairline<br /><span class="hero-gradient">file for
+                        retirement?</span></h1>
+                <p class="hero-sub">Upload 1–3 photos and our <em>completely fictional</em> AI will analyse your
+                    hairline with extraordinary confidence and zero accuracy.</p>
+
+                <div class="disclaimer-banner">
+                    <span class="disclaimer-icon">🔬</span>
+                    <span>This is a <strong>joke project</strong>. Not medical advice. Cannot diagnose hair loss or
+                        predict baldness. For entertainment only.</span>
+                </div>
+
+                <!-- Upload Zone -->
+                <div class="upload-card" id="uploadCard">
+                    <div class="upload-zone" id="dropZone">
+                        <input type="file" id="fileInput" accept="image/*" multiple hidden />
+                        <div class="upload-icon">📸</div>
+                        <p class="upload-title">Drop your photos here</p>
+                        <p class="upload-sub">or <button class="link-btn" id="browseBtn">browse files</button></p>
+                        <div class="upload-hints">
+                            <span class="hint"><span class="hint-icon">✓</span> Front-facing photo</span>
+                            <span class="hint"><span class="hint-icon">✓</span> Good lighting</span>
+                            <span class="hint"><span class="hint-icon">✓</span> Hair away from forehead</span>
+                            <span class="hint"><span class="hint-icon">✓</span> 1–3 images</span>
+                        </div>
+                    </div>
+
+                    <!-- Preview grid -->
+                    <div class="preview-grid" id="previewGrid" hidden></div>
+
+                    <div class="upload-actions" id="uploadActions" hidden>
+                        <button class="btn btn-primary" id="analyzeBtn">
+                            <span class="btn-icon">🔍</span>
+                            <span>Analyse My Hairline</span>
+                        </button>
+                        <button class="btn btn-ghost" id="clearBtn">Clear photos</button>
+                    </div>
+                </div>
+
+                <div class="divider-or"><span>or</span></div>
+
+                <button class="btn btn-outline demo-btn" id="demoBtn">
+                    <span class="btn-icon">🎬</span>
+                    Try Demo Mode (no upload needed)
+                </button>
+
+                <div class="privacy-note">
+                    <span class="privacy-icon">🔒</span>
+                    Photos are deleted immediately after analysis — never stored or retained.
+                </div>
+            </main>
+        </section>
+
+        <!-- ======= ANALYSIS SCREEN ======= -->
+        <section class="page" id="pageAnalysis">
+            <div class="analysis-container">
+                <div class="analysis-logo">
+                    <span class="logo-icon spin-slow">🦱</span>
+                </div>
+                <h2 class="analysis-title">Analysing...</h2>
+                <div class="analysis-messages" id="analysisMessages">
+                    <div class="analysis-msg active" id="msg0">🔭 Searching for hairline...</div>
+                    <div class="analysis-msg" id="msg1">💪 Counting brave follicles...</div>
+                    <div class="analysis-msg" id="msg2">🧬 Detecting generational baldness...</div>
+                    <div class="analysis-msg" id="msg3">👴 Contacting your ancestors...</div>
+                    <div class="analysis-msg" id="msg4">📊 Compiling the damning evidence...</div>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="analysis-note">Using cutting-edge pseudoscience since 2024</p>
+            </div>
+        </section>
+
+        <!-- ======= RESULTS PAGE ======= -->
+        <section class="page" id="pageResults">
+            <header class="results-header">
+                <div class="logo">
+                    <span class="logo-icon">🦱</span>
+                    <span class="logo-text">കഷണ്ടി <span class="logo-accent">Meter</span></span>
+                </div>
+                <div class="disclaimer-chip">🎭 Entertainment Only</div>
+            </header>
+
+            <main class="results-main" id="resultsMain">
+                <!-- Populated by JS -->
+            </main>
+        </section>
+
+        <!-- ======= COMPARE PAGE ======= -->
+        <section class="page" id="pageCompare">
+            <header class="results-header">
+                <div class="logo">
+                    <span class="logo-icon">🦱</span>
+                    <span class="logo-text">കഷണ്ടി <span class="logo-accent">Meter</span></span>
+                </div>
+                <button class="btn btn-ghost back-btn" id="compareBackBtn">← Back to Results</button>
+            </header>
+            <main class="compare-main" id="compareMain">
+                <h2 class="compare-title">Compare Two Reads</h2>
+                <p class="compare-sub">Upload a second photo set to compare hairline trajectories side by side.</p>
+                <div class="compare-panels" id="comparePanels">
+                    <!-- Populated by JS -->
+                </div>
+            </main>
+        </section>
+
+    </div><!-- /app -->
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Hidden canvas for result card export -->
+    <canvas id="exportCanvas" hidden></canvas>
+
+    <script src="/static/js/main.js" type="module"></script>
+</body>
+
+</html>
